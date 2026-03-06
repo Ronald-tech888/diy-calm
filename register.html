@@ -10,7 +10,7 @@
     main { max-width: 720px; margin: -30px auto 60px; background: #fff; border-radius: 16px; box-shadow: 0 15px 45px rgba(15,40,90,0.12); padding: 40px; }
     h1, h2 { margin-top: 0; }
     label { display: block; font-weight: 600; margin: 18px 0 6px; }
-    input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #d9dbe1; font-size: 1rem; box-sizing: border-box; }
+    input[type="text"], input[type="email"], textarea { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #d9dbe1; font-size: 1rem; box-sizing: border-box; }
     textarea { min-height: 110px; resize: vertical; }
     .radio-group, .checkbox-group { display: grid; gap: 8px; margin: 10px 0 4px; }
     .radio-option, .checkbox-option { background: #f7f8fc; border-radius: 10px; padding: 10px 12px; border: 1px solid transparent; }
@@ -50,8 +50,48 @@
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://0x0.st/Pj9_.html">
 
-      <!-- fields omitted here for brevity in this snippet; full block matches之前版本 -->
-      …（同上一版本，含票种、付款方式、条款等完整字段）…
+      <label for="full-name">Full Name *</label>
+      <input type="text" id="full-name" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+
+      <label for="whatsapp">WhatsApp / Mobile Number *</label>
+      <input type="text" id="whatsapp" name="WhatsApp / Mobile" placehol
+der="e.g., +6013-308-3049" required>
+      <p class="help">Include country code if you are outside Malaysia.</p>
+
+      <label>Ticket Selection *</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="Ticket" value="Early Bird – RM280" required>Early Bird (pay by 10 Mar) – RM280</label>
+        <label class="radio-option"><input type="radio" name="Ticket" value="Standard – RM350">Standard – RM350</label>
+        <label class="radio-option"><input type="radio" name="Ticket" value="Buddy Pass – RM520">Buddy Pass (2 pax) – RM520</label>
+      </div>
+
+      <label for="buddy">Buddy participant name (if booking Buddy Pass)</label>
+      <input type="text" id="buddy" name="Buddy Participant" placeholder="Only if you selected the 2-pax option">
+
+      <label>Payment Method *</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="Payment Method" value="Touch 'n Go eWallet" required>Touch 'n Go eWallet (send to 133083049)</label>
+        <label class="radio-option"><input type="radio" name="Payment Method" value="Maybank Transfer">Maybank Transfer (512820159148 · Ong Soon Chong)</label>
+      </div>
+
+      <label>How will you send your payment slip? *</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="Send Slip Via" value="WhatsApp" required>WhatsApp (+6013-308-3049)</label>
+        <label class="radio-option"><input type="radio" name="Send Slip Via" value="Email">Email (purchasingpoweruser@gmail.com)</label>
+      </div>
+
+      <label for="notes">Special notes / plumbing questions (optional)</label>
+      <textarea id="notes" name="Additional Notes" placeholder="Let us know if you have specific fixtures, rental units, or issues you want to focus on."></textarea>
+
+      <label class="checkbox-option" style="margin-top:22px;">
+        <input type="checkbox" name="Seat Confirmation" value="I acknowledge the payment policy" required>
+        I understand seats are confirmed only after payment slip is sent. Replacements allowed; no refunds within 5 days of the workshop.
+      </label>
+
+      <button type="submit">Submit & Continue to Payment</button>
     </form>
     <p class="help" style="margin-top:24px;">Having issues with the form? Email the details to purchasingpoweruser@gmail.com.</p>
   </main>
