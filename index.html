@@ -81,6 +81,143 @@ Max 10 participants · Coffee & Tea provided</p>
       <h2>Who Should Attend?</h2>
       <p>Homeowners, renters, Airbnb hosts, newlyweds, or anyone tired of waiting for minor plumbing repairs.</p>
     </section>
+        <section class="testimonial-section">
+  <h2>⭐Real feedback from students⭐</h2>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="track">
+
+      <div class="card">
+        <h3>Not just learning how to fix pipes, but learning to think like a professional plumber.</h3>
+        <p>He can identify where the problem is before we've even finished explaining. What I learned isn't techniques—it's a way of thinking.</p>
+        <span>- David -</span>
+      </div>
+
+      <div class="card">
+        <h3>It turns out I can solve problems on my own too.</h3>
+        <p>For that one hour, I truly felt like a 'plumber.' The process was very fulfilling.</p>
+        <span>- Winsted -</span>
+      </div>
+
+      <div class="card">
+        <h3>A 4-hour course that taught me far more than I expected.</h3>
+        <p>Many of those insider tips and tricks can't be learned anywhere else. Now when there's a leak at home, I don't panic right away anymore.</p>
+        <span>- Daisy -</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- dots -->
+  <div class="dots" id="dots"></div>
+</section>
+
+<style>
+.testimonial-section {
+  padding: 30px 15px;
+  background: #f9f9f9;
+}
+
+.testimonial-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.card {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.card span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* dots */
+.dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 4px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background-color: #333;
+}
+</style>
+
+<script>
+const track = document.getElementById("track");
+const cards = document.querySelectorAll(".card");
+const dotsContainer = document.getElementById("dots");
+
+let index = 0;
+let total = cards.length;
+
+/* create dots */
+for (let i = 0; i < total; i++) {
+  let dot = document.createElement("span");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+/* go to slide */
+function goToSlide(i) {
+  index = i;
+  track.style.transform = `translateX(-${i * 100}%)`;
+  updateDots();
+}
+
+/* update dots */
+function updateDots() {
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+/* auto slide */
+setInterval(() => {
+  index = (index + 1) % total;
+  goToSlide(index);
+}, 8000); // 4秒自动滑
+</script>
     <section>
       <h2>How to Register</h2>
       <ol>
