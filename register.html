@@ -3,98 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register – DIY Plumbing Workshop</title>
+  <title>Register – DIY Calm Workshop</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6f8; margin: 0; color: #1f1f1f; }
-    header { background: linear-gradient(120deg, #0c5dbb, #13a3c7); padding: 32px 20px; text-align: center; color: #fff; }
-    main { max-width: 720px; margin: -30px auto 60px; background: #fff; border-radius: 16px; box-shadow: 0 15px 45px rgba(15,40,90,0.12); padding: 40px; }
-    h1, h2 { margin-top: 0; }
-    label { display: block; font-weight: 600; margin: 18px 0 6px; }
-    input[type="text"], input[type="email"], textarea { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #d9dbe1; font-size: 1rem; box-sizing: border-box; }
-    textarea { min-height: 110px; resize: vertical; }
-    .radio-group, .checkbox-group { display: grid; gap: 8px; margin: 10px 0 4px; }
-    .radio-option, .checkbox-option { background: #f7f8fc; border-radius: 10px; padding: 10px 12px; border: 1px solid transparent; }
-    .radio-option input, .checkbox-option input { margin-right: 10px; }
-    .help { font-size: 0.92rem; color: #606274; }
-    button { margin-top: 24px; width: 100%; background: #0c5dbb; color: #fff; border: none; border-radius: 999px; padding: 14px; font-size: 1.05rem; font-weight: 600; cursor: pointer; }
-    button:hover { background: #0a4c95; }
-    .info-box { background: #f1f7ff; border-left: 4px solid #0c5dbb; padding: 14px 18px; border-radius: 12px; margin-bottom: 18px; }
-    .tng-box { background: #fffaf1; border: 1px solid #ffe2b5; border-radius: 16px; padding: 18px; margin-bottom: 22px; }
-    .tng-box p { margin: 6px 0; }
-    @media (max-width: 640px) { main { padding: 26px; } }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #fefaf5;
+      color: #1a2a32;
+      line-height: 1.4;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2e5a6e 0%, #1f3e4b 100%);
+      padding: 48px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: -30px auto 60px;
+      background: white;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      padding: 40px;
+    }
+
+    h2 {
+      color: #2c5a4c;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 20px;
+      display: block;
+      color: #2c5a4c;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 60px;
+      border: 1px solid #e2d6cb;
+      margin-top: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      border-radius: 24px;
+      resize: vertical;
+    }
+
+    .radio-group, .checkbox-group {
+      background: #fef9f2;
+      padding: 16px 20px;
+      border-radius: 28px;
+      margin: 10px 0;
+    }
+
+    .radio-group label, .checkbox-group label {
+      font-weight: normal;
+      margin-top: 8px;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .radio-group input, .checkbox-group input {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .payment-box {
+      background: #fef6e8;
+      border-radius: 28px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #c47f4b;
+      color: white;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #a86436;
+    }
+
+    .info-note {
+      font-size: 0.85rem;
+      color: #6f7e87;
+      margin-top: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: #c47f4b;
+      text-decoration: none;
+    }
+
+    hr {
+      margin: 24px 0;
+      border: 0;
+      height: 1px;
+      background: #f0e2d4;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 28px 24px;
+        margin: -20px 16px 40px;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>DIY Plumbing Workshop – Registration</h1>
-    <p>Saturday, 9 May 2026 · 9:00 AM – 1:00 PM · Damansara Damai</p>
-    <p>Hands-on class · Max 10 participants</p>
-  </header>
-  <main>
-    <div class="info-box">
-      <p><strong>Step 1:</strong> Submit this form.</p>
-      <p><strong>Step 2:</strong> Pay via Touch 'n Go eWallet or HLB transfer.</p>
-      <p><strong>Step 3:</strong> WhatsApp +6013-308-3049 or email purchasingpoweruser@gmail.com with your payment slip to confirm your seat.</p>
+
+<header>
+  <h1>🌿 DIY Calm Workshop</h1>
+  <p>16 May 2026 · 9:00 AM – 1:00 PM · Bukit Jelutong, Shah Alam</p>
+  <p>Hands-on aromatherapy · Max 10 participants</p>
+</header>
+
+<main>
+  <h2>✨ Secure Your Calm Seat</h2>
+  
+  <div class="payment-box">
+    <p style="font-weight: 600; margin-bottom: 12px;">💳 Payment Instructions:</p>
+    <p><strong>Touch 'n Go eWallet:</strong> +6013-308-3049 (Ong Soon Chong)</p>
+    <p><strong>HLB Bank Transfer:</strong> 04100099089 (Ong Soon Chong)</p>
+    <p><strong>Reference:</strong> DIY CALM / [Your Name]</p>
+    <p style="margin-top: 12px; font-size: 0.9rem;">✅ After submitting this form, send payment slip to WhatsApp +6013-308-3049 or email purchasingpoweruser@gmail.com</p>
+  </div>
+
+  <!-- ✅ FORM with method="POST" - redirects to thanks.html in same directory -->
+  <form action="https://formsubmit.co/purchasingpoweruser@gmail.com" method="POST">
+    <!-- FormSubmit configuration -->
+    <input type="hidden" name="_subject" value="NEW: DIY Calm Workshop Registration">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <!-- ✅ FIXED: Redirect to thanks.html in the same folder -->
+    <input type="hidden" name="_next" value="thanks.html">
+    <input type="hidden" name="_cc" value="midasmines@gmail.com,desmondsia.everlifestyle@gmail.com">
+
+    <label for="fullname">Full Name *</label>
+    <input type="text" id="fullname" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+
+    <label for="whatsapp">WhatsApp / Mobile Number *</label>
+    <input type="text" id="whatsapp" name="WhatsApp Number" placeholder="e.g., +6013-308-3049" required>
+    <div class="info-note">Include country code if outside Malaysia</div>
+
+    <label>Ticket Selection *</label>
+    <div class="radio-group">
+      <label><input type="radio" name="Ticket Type" value="Early Bird – RM280" required> Early Bird (first seats) – RM280</label>
+      <label><input type="radio" name="Ticket Type" value="Standard – RM350"> Standard – RM350</label>
+      <label><input type="radio" name="Ticket Type" value="Buddy Pass – RM520"> Buddy Pass (2 pax) – RM520</label>
     </div>
 
-    <div class="tng-box">
-      <h2 style="margin-top:0; font-size:1.15rem; color:#b06900;">Touch 'n Go eWallet · Ong Soon Chong</h2>
-      <p><strong>TNG ID / Mobile:</strong> 133083049</p>
-      <p><em>Reference:</em> DIY Plumbing Workshop</p>
-      <p style="font-size:0.9rem; color:#8a5a00;"</p>
+    <label for="buddy">Buddy Participant Name (if booking Buddy Pass)</label>
+    <input type="text" id="buddy" name="Buddy Participant Name" placeholder="Your workshop partner's full name">
+
+    <label>Payment Method *</label>
+    <div class="radio-group">
+      <label><input type="radio" name="Payment Method" value="Touch 'n Go eWallet" required> Touch 'n Go eWallet (send to 133083049)</label>
+      <label><input type="radio" name="Payment Method" value="HLB Transfer"> HLB Transfer (04100099089)</label>
     </div>
 
-    <form action="https://formsubmit.co/purchasingpoweruser@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New DIY Plumbing Registration">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://ronald-tech888.github.io/diy-plumbing-workshop/thanks.html">
-      <input type="hidden" name="_cc" value="midasmines@gmail.com,desmondsia.everlifestyle@gmail.com">
-      
-      <label for="full-name">Full Name *</label>
-      <input type="text" id="full-name" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
+    <label>How will you send your payment slip? *</label>
+    <div class="radio-group">
+      <label><input type="radio" name="Slip Delivery Method" value="WhatsApp" required> WhatsApp (+6013-308-3049)</label>
+      <label><input type="radio" name="Slip Delivery Method" value="Email"> Email (purchasingpoweruser@gmail.com)</label>
+    </div>
 
-      <label for="email">Email Address *</label>
-      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+    <label for="notes">Special notes / stress concerns or questions (optional)</label>
+    <textarea id="notes" name="Additional Notes" rows="3" placeholder="Let us know if you have specific sleep issues, tension areas, or questions about aromatherapy."></textarea>
 
-      <label for="whatsapp">WhatsApp / Mobile Number *</label>
-      <input type="text" id="whatsapp" name="WhatsApp / Mobile" placehol
-der="e.g., +6013-308-3049" required>
-      <p class="help">Include country code if you are outside Malaysia.</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="Payment Policy Acknowledged" value="Yes" required> I understand seats are confirmed only after payment slip is sent. Replacements allowed; no refunds within 3 days of the workshop.</label>
+    </div>
 
-      <label>Ticket Selection *</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="Ticket" value="Early Bird – RM280" required>Early Bird (first 5 seats only) – RM280</label>
-        <label class="radio-option"><input type="radio" name="Ticket" value="Standard – RM350">Standard – RM350</label>
-        <label class="radio-option"><input type="radio" name="Ticket" value="Buddy Pass – RM520">Buddy Pass (2 pax) – RM520</label>
-      </div>
+    <button type="submit" class="btn">💚 Submit Registration → Proceed to Payment</button>
+  </form>
 
-      <label for="buddy">Buddy participant name (if booking Buddy Pass)</label>
-      <input type="text" id="buddy" name="Buddy Participant" placeholder="Only if you selected the 2-pax option">
+  <hr>
+  <p style="text-align: center; font-size: 0.9rem;">Having issues with the form? Email details to purchasingpoweruser@gmail.com</p>
+  <!-- ✅ FIXED: "Back to Workshop Details" links to index.html in same directory -->
+  <p style="text-align: center;"><a href="index.html" class="back-link">← Back to Workshop Details</a></p>
+</main>
 
-      <label>Payment Method *</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="Payment Method" value="Touch 'n Go eWallet" required>Touch 'n Go eWallet (send to 133083049)</label>
-        <label class="radio-option"><input type="radio" name="Payment Method" value="Maybank Transfer">HLB Transfer (04100099089 · Ong Soon Chong)</label>
-      </div>
-
-      <label>How will you send your payment slip? *</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="Send Slip Via" value="WhatsApp" required>WhatsApp (+6013-308-3049)</label>
-        <label class="radio-option"><input type="radio" name="Send Slip Via" value="Email">Email (purchasingpoweruser@gmail.com)</label>
-      </div>
-
-      <label for="notes">Special notes / plumbing questions (optional)</label>
-      <textarea id="notes" name="Additional Notes" placeholder="Let us know if you have specific fixtures, rental units, or issues you want to focus on."></textarea>
-
-      <label class="checkbox-option" style="margin-top:22px;">
-        <input type="checkbox" name="Seat Confirmation" value="I acknowledge the payment policy" required>
-        I understand seats are confirmed only after payment slip is sent. Replacements allowed; no refunds within 3 days of the workshop.
-      </label>
-
-      <button type="submit">Submit & Continue to Payment</button>
-    </form>
-    <p class="help" style="margin-top:24px;">Having issues with the form? Email the details to purchasingpoweruser@gmail.com.</p>
-  </main>
 </body>
 </html>
