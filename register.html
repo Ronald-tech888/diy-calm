@@ -160,15 +160,21 @@
     <p style="margin-top: 12px; font-size: 0.9rem;">✅ After submitting this form, send payment slip to WhatsApp +6013-308-3049 or email purchasingpoweruser@gmail.com</p>
   </div>
 
-  <!-- ✅ FORM with method="POST" - redirects to thanks.html in same directory -->
+  <!-- ✅ FORM with method="POST" - will redirect to thanks.html -->
   <form action="https://formsubmit.co/purchasingpoweruser@gmail.com" method="POST">
     <!-- FormSubmit configuration -->
     <input type="hidden" name="_subject" value="NEW: DIY Calm Workshop Registration">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
-    <!-- ✅ FIXED: Redirect to thanks.html in the same folder -->
+    
+    <!-- ✅ IMPORTANT: This tells FormSubmit to redirect to thanks.html -->
     <input type="hidden" name="_next" value="thanks.html">
+    
+    <!-- Send CC to these emails -->
     <input type="hidden" name="_cc" value="midasmines@gmail.com,desmondsia.everlifestyle@gmail.com">
+    
+    <!-- Auto reply to user (optional but recommended) -->
+    <input type="hidden" name="_autoresponse" value="Thank you for registering for DIY Calm Workshop! We've received your registration. Please complete payment within 12 hours to secure your seat. Payment details: Touch 'n Go +6013-308-3049 or HLB 04100099089 (Ong Soon Chong). Send payment slip to WhatsApp +6013-308-3049.">
 
     <label for="fullname">Full Name *</label>
     <input type="text" id="fullname" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
@@ -209,12 +215,12 @@
       <label><input type="checkbox" name="Payment Policy Acknowledged" value="Yes" required> I understand seats are confirmed only after payment slip is sent. Replacements allowed; no refunds within 3 days of the workshop.</label>
     </div>
 
+    <!-- ✅ Submit button - when clicked, form POSTs to FormSubmit, then redirects to thanks.html -->
     <button type="submit" class="btn">💚 Submit Registration → Proceed to Payment</button>
   </form>
 
   <hr>
   <p style="text-align: center; font-size: 0.9rem;">Having issues with the form? Email details to purchasingpoweruser@gmail.com</p>
-  <!-- ✅ FIXED: "Back to Workshop Details" links to index.html in same directory -->
   <p style="text-align: center;"><a href="index.html" class="back-link">← Back to Workshop Details</a></p>
 </main>
 
