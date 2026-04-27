@@ -3,35 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You – DIY Plumbing Workshop</title>
+  <title>Thank You – DIY Calm Workshop</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6f8; color: #1f1f1f; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
-    .card { background: #fff; border-radius: 20px; box-shadow: 0 15px 45px rgba(15,40,90,0.12); padding: 36px; max-width: 560px; width: 100%; text-align: center; }
-    h1 { color: #0c5dbb; margin-top: 0; }
-    p { line-height: 1.5; }
-    .info { margin: 24px auto; background: #fffaf1; border: 1px solid #ffe2b5; border-radius: 18px; padding: 18px; text-align: left; }
-    .info h3 { margin: 0 0 8px; color: #b06900; }
-    .info p { margin: 4px 0; }
-    .actions { margin-top: 24px; display: grid; gap: 12px; }
-    a { text-decoration: none; border-radius: 999px; padding: 12px 18px; font-weight: 600; display: inline-block; }
-    .primary { background: #0c5dbb; color: #fff; }
-    .secondary { border: 1px solid #ced1db; color: #0c356b; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #fefaf5;
+      color: #1a2a32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 36px;
+      box-shadow: 0 20px 45px rgba(15, 40, 90, 0.12);
+      padding: 48px 40px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c5a4c;
+      margin-top: 0;
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #4a5b62;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      margin: 28px auto;
+      background: #fef6e8;
+      border: 1px solid #f0e2d4;
+      border-radius: 28px;
+      padding: 24px;
+      text-align: left;
+    }
+
+    .info h3 {
+      margin: 0 0 12px;
+      color: #c47f4b;
+      font-size: 1.2rem;
+    }
+
+    .info p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .payment-details {
+      background: #f2efe0;
+      padding: 16px;
+      border-radius: 20px;
+      margin: 16px 0;
+    }
+
+    .actions {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 60px;
+      padding: 12px 28px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #c47f4b;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #a86436;
+    }
+
+    .btn-secondary {
+      border: 1.5px solid #c47f4b;
+      color: #c47f4b;
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: #fef0e4;
+    }
+
+    .checkmark {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 32px 24px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Thanks! 🎉</h1>
-    <p>We’ve received your registration. Please complete payment within 12 hours to secure your seat.</p>
+    <div class="checkmark">🎉✨🌿</div>
+    <h1>You're on the path to calm!</h1>
+    <p>We've received your registration for the <strong>DIY Calm Workshop</strong>.</p>
+    
     <div class="info">
-      <h3>Touch 'n Go eWallet · Ong Soon Chong</h3>
-      <p><strong>TNG ID / Mobile:</strong> 133083049</p>
-      <p><strong>Reference:</strong> DIY Plumbing Workshop</p>
-      <p>After paying, send the slip via WhatsApp +6013-308-3049 or email purchasingpoweruser@gmail.com.</p>
-      <p>Bank transfer option: Hong Leong Bank 04100099089 (Ong Soon Chong).</p>
+      <h3>💚 Next steps to secure your seat:</h3>
+      <div class="payment-details">
+        <p><strong>💳 Touch 'n Go eWallet</strong><br>
+        TNG ID / Mobile: <strong>133083049</strong> (Ong Soon Chong)<br>
+        Reference: <strong>DIY CALM / [Your Name]</strong></p>
+        <p><strong>🏦 HLB Bank Transfer</strong><br>
+        Account: <strong>04100099089</strong> (Ong Soon Chong)</p>
+      </div>
+      <p>📱 After payment, send your payment slip via <strong>WhatsApp +6013-308-3049</strong> or email <strong>purchasingpoweruser@gmail.com</strong></p>
+      <p>✅ Your seat is confirmed only after we receive your payment slip.</p>
+      <p>📦 You'll receive a welcome kit with venue map & pre-workshop calm tips within 24 hours after confirmation.</p>
     </div>
+
     <div class="actions">
-      <a class="primary" href="https://ronald-tech888.github.io/diy-plumbing-mandarin/">Back to Landing Page</a>
+      <!-- ✅ FIXED: "Back to Workshop Details" links to index.html in same directory -->
+      <a href="index.html" class="btn btn-primary">← Back to Workshop Details</a>
+      <a href="https://wa.me/60133083049" class="btn btn-secondary" target="_blank">💬 WhatsApp Us Now</a>
     </div>
+    
+    <p style="margin-top: 28px; font-size: 0.8rem; color: #8f9ea8;">🧘 Calm is a skill — and you're just 4 hours away from mastering it.</p>
   </div>
 </body>
 </html>
