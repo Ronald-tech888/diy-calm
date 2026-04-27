@@ -2,236 +2,456 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIY Plumbing for Beginners Workshop</title>
-  <img src="hero.jpg" style="width:100%; border-radius:12px;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>DIY Calm Workshop | Create Your Own Stress-Relief Blends</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f5f6f8; color: #1f1f1f; }
-    header { background: linear-gradient(120deg, #0c5dbb, #13a3c7); color: #fff; padding: 48px 24px; text-align: center; }
-    header h1 { margin: 0 0 12px; font-size: 2.6rem; }
-    header p { margin: 6px 0; font-size: 1.1rem; }
-    main { max-width: 900px; margin: -40px auto 60px; background: #fff; border-radius: 16px; box-shadow: 0 15px 45px rgba(15,40,90,0.15); overflow: hidden; }
-    section { padding: 32px 48px; border-bottom: 1px solid #eef0f4; }
-    section h2 { margin-top: 0; color: #0c5dbb; font-size: 1.6rem; }
-    ul { padding-left: 20px; }
-    .highlight { background: #f1f7ff; border-left: 4px solid #0c5dbb; padding: 16px 20px; margin: 18px 0; border-radius: 12px; }
-    .cta { text-align: center; padding: 40px; background: #0c5dbb; color: #fff; }
-    .cta a { display: inline-block; background: #ffd35c; color: #1f1f1f; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; }
-    @media (max-width: 640px) { section { padding: 24px 22px; } }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #fefaf5;
+      color: #1a2a32;
+      line-height: 1.4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #2e5a6e 0%, #1f3e4b 100%);
+      color: white;
+      padding: 48px 24px 56px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.8rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      opacity: 0.9;
+    }
+
+    .hero-quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      background: rgba(255,255,240,0.12);
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 60px;
+    }
+
+    .main-card {
+      background: white;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      margin: -40px auto 60px;
+      overflow: hidden;
+    }
+
+    section {
+      padding: 32px 40px;
+      border-bottom: 1px solid #f0e9e2;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #2c5a4c;
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2e5a6e;
+      margin: 18px 0 10px;
+    }
+
+    .highlight-box {
+      background: #fef6e8;
+      border-left: 5px solid #e6aa68;
+      padding: 20px 24px;
+      border-radius: 24px;
+      margin: 24px 0;
+    }
+
+    .grid-2col {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .grid-item {
+      flex: 1;
+      min-width: 220px;
+      background: #fefaf5;
+      border-radius: 24px;
+      padding: 18px;
+      border: 1px solid #f0e2d4;
+      font-weight: 500;
+    }
+
+    .calm-kit {
+      background: #f2efe0;
+      border-radius: 28px;
+      padding: 20px 28px;
+      margin: 24px 0;
+    }
+
+    .kit-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .kit-badge {
+      background: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2c5a4c;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      background: #fef3e4;
+      padding: 20px 26px;
+      border-radius: 32px;
+      margin-top: 20px;
+    }
+
+    .price-card {
+      text-align: center;
+      flex: 1;
+    }
+
+    .price-amount {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2e5a6e;
+    }
+
+    .badge {
+      background: #e6aa68;
+      color: #2c2b26;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #c47f4b;
+      color: white;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #a86436;
+      transform: scale(1.01);
+    }
+
+    .testimonial-section {
+      background: #fdf8f2;
+    }
+
+    .carousel {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .testimonial-card {
+      min-width: 100%;
+      padding: 28px 24px;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      box-sizing: border-box;
+    }
+
+    .testimonial-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      color: #2f3e46;
+    }
+
+    .testimonial-card h4 {
+      font-weight: 600;
+      color: #c47f4b;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      background-color: #ddd2c4;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .dot.active {
+      background-color: #c47f4b;
+      width: 24px;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: #e7dfd3;
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #4b5a60;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 750px) {
+      section {
+        padding: 28px 24px;
+      }
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .price-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .workshop-highlight {
+      display: inline-block;
+      background: #fae6cf;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      color: #2c5a4c;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>DIY Plumbing for Beginners</h1>
-    <p>9 May 2026 · 9:00 AM – 1:00 PM · Damansara Damai, Petaling Jaya</p>
-    <p>English ·
-Max 12 participants · Coffee/Tea & Snacks provided</p>
-  </header>
-  <main>
-    <section>
-      <h2>Why Join?</h2>
-      <p>Fix 80% of household plumbing issues on your own, stop waiting days for plumbers, and save RM100–RM300 per visit. Train with a certified plumber (25+ years’ experience) on real taps, traps, and toilet rigs. Tools and materials are provided.</p>
-      <div class="highlight">
-<strong>Format:</strong> Theory + Live Demonstration + Hands-On Rotation Stations
-      </div>
-    </section>
-    <section>
-      <img src="desmond.jpg" style="width:100%; border-radius:12px;">
-      <h2>What You’ll Learn</h2>
-      <ul>
-        <li>Locate and shut main/isolation valves safely</li>
-        <li>Install or replace flexible hoses and apply PTFE tape correctly</li>
-        <li>Clean sink P-traps & floor traps without harsh chemicals</li>
-        <li>Unclog floor traps using safe mechanical methods</li>
-        <li>Troubleshoot toilet flush issues</li>
-        <li>Build a personal starter plumbing toolkit</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Schedule Snapshot</h2>
-      <ul>
-        <li>Welcome, introductions & safety briefing</li>
-        <li>Plumbing basics for Malaysian homes</li>
-        <li>Trainer demonstrations</li>
-        <li>Hands-on rotation across 3 practice stations</li>
-        <li>Troubleshooting clinic + Q&A</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Fees & Payment</h2>
-      <ul>
-        <li><strong>Early Bird (First 5 seats only):</strong> RM 280</li>
-        <li><strong>Standard:</strong> RM 350</li>
-        <li><strong>Buddy Pass (2 pax):</strong> RM 520</li>
-      </ul>
-      <p>Payment options: Touch ‘n Go eWallet or bank transfer. Seats confirmed upon payment (max 12 pax).</p>
-    </section>
-    <section>
-      <h2>What’s Included</h2>
-      <ul>
-        <li>4-hour guided workshop with a certified plumber</li>
-        <li>Use of tools, rigs, PPE, and consumables</li>
-        <li>Checklists and cheat sheets</li>
-        <li>Coffee/Tea & snacks station</li>
-        <li>Certificate of completion</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Who Should Attend?</h2>
-      <p>Homeowners, renters, Airbnb hosts, newlyweds, or anyone tired of waiting for minor plumbing repairs.</p>
-    </section>
-        <section class="testimonial-section">
-  <h2>⭐Real feedback from students⭐</h2>
 
-  <div class="carousel" id="carousel">
-    <div class="carousel-track" id="track">
+<div style="background: #b7cfc2; text-align: center; padding: 60px 20px;">
+  <h1 style="color: #3b5248; font-size: 2.5rem;">CREATE CALM. USE IT. OWN IT.</h1>
+  <p style="color: #2c5a4c; margin-top: 10px;">🌿 Aromatherapy Workshop 🌿</p>
+</div>
 
-      <div class="card">
-        <h3>Not just learning how to fix pipes, but learning to think like a professional plumber.</h3>
-        <p>He can identify where the problem is before we've even finished explaining. What I learned isn't techniques—it's a way of thinking.</p>
-        <span>- David -</span>
-      </div>
-
-      <div class="card">
-        <h3>It turns out I can solve problems on my own too.</h3>
-        <p>For that one hour, I truly felt like a 'plumber.' The process was very fulfilling.</p>
-        <span>- Winsted -</span>
-      </div>
-
-      <div class="card">
-        <h3>A 4-hour course that taught me far more than I expected.</h3>
-        <p>Many of those insider tips and tricks can't be learned anywhere else. Now when there's a leak at home, I don't panic right away anymore.</p>
-        <span>- Daisy -</span>
-      </div>
-
-    </div>
+<header class="hero-section">
+  <div class="container">
+    <div class="workshop-highlight">✨ HANDS-ON AROMATHERAPY WORKSHOP ✨</div>
+    <h1>DIY CALM:<br>CREATE YOUR OWN STRESS-RELIEF BLENDS</h1>
+    <p class="hero-tagline">🌿 Calm is a skill. Not a luxury. ❤️</p>
+    <div class="hero-quote">🧘‍♀️ "Can't switch off your mind at night? Overthinking · Stress · Poor Sleep"</div>
+    <p style="margin-top: 28px; font-weight: 500;">📍 Bukit Jelutong, Shah Alam · 🗓️ 16 MAY (SAT) · ⏰ 9:00 AM – 1:00 PM</p>
   </div>
+</header>
 
-  <!-- dots -->
-  <div class="dots" id="dots"></div>
-</section>
+<main class="container main-card">
+  <section>
+    <h2>🌸 After this 4 hours, you can:</h2>
+    <div class="grid-2col">
+      <div class="grid-item">✨ Know exactly what to use when stress hits</div>
+      <div class="grid-item">✨ Create your own calm blend you can use anytime</div>
+      <div class="grid-item">✨ Use the right blend for sleep, stress & tension</div>
+      <div class="grid-item">🎁 Bring home your own CALM KIT!</div>
+    </div>
+  </section>
 
-<style>
-.testimonial-section {
-  padding: 30px 15px;
-  background: #f9f9f9;
-}
+  <section>
+    <h2>🎁 Your Personal CALM KIT <span style="font-size: 1rem;">(WORTH RM140)</span></h2>
+    <div class="calm-kit">
+      <h3 style="margin-top: 0;">🧴 What's Inside?</h3>
+      <div class="kit-list">
+        <span class="kit-badge">🌱 Your own blended essential oil roll-on</span>
+        <span class="kit-badge">💤 Sleep synergy mist</span>
+        <span class="kit-badge">🌼 Stress-relief diffuser blend</span>
+        <span class="kit-badge">📖 Handbook & Recipes</span>
+        <span class="kit-badge">🧪 Amber glass bottle & carrier oils</span>
+        <span class="kit-badge">✨ Your creations to take home</span>
+      </div>
+      <p style="margin-top: 16px;">🧾 <strong>All materials provided</strong> — just bring yourself!</p>
+    </div>
+  </section>
 
-.testimonial-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 22px;
-}
+  <section>
+    <h2>🌙 Why join DIY Calm?</h2>
+    <p>Stop lying awake with a racing mind. Aromatherapy is backed by science to lower cortisol and ease nervous system. In this intimate, hands-on workshop, you'll blend your own therapeutic-grade remedies — tailored to YOUR sleep and stress patterns.</p>
+    <div class="highlight-box">
+      ✅ <strong>Small Class Size (Max 10 Pax)</strong> – Better learning, individual guidance <br>
+      ✅ <strong>30 Days WhatsApp Support</strong> – ask anything after workshop <br>
+      ✅ <strong>Handbook & Recipes Included</strong> – recreate blends anytime
+    </div>
+  </section>
 
-.carousel {
-  overflow: hidden;
-  position: relative;
-}
+  <section>
+    <h2>🎟️ Investment (ALL MATERIALS + CALM KIT INCLUDED)</h2>
+    <div class="price-row">
+      <div class="price-card">
+        <div class="badge">🔥 EARLY BIRD</div>
+        <div class="price-amount">RM280</div>
+        <div>(first seats)</div>
+      </div>
+      <div class="price-card">
+        <div class="badge">⭐ STANDARD</div>
+        <div class="price-amount">RM350</div>
+        <div>regular price</div>
+      </div>
+      <div class="price-card">
+        <div class="badge">👯‍♀️ BUDDY PASS</div>
+        <div class="price-amount">RM520</div>
+        <div>(2 pax · save RM180)</div>
+      </div>
+    </div>
+    <p style="margin-top: 12px; text-align: center;">✨ <strong>10 SEATS ONLY!</strong> Secure your spot now. ✨</p>
+  </section>
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
+  <section>
+    <h2>🧘 What You'll Experience</h2>
+    <ul style="margin-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+      <li>🌿 Understanding carrier oils vs essential oils — safety first</li>
+      <li>🛌 DIY calm blends for insomnia & anxious thoughts</li>
+      <li>👐 Hands-on blending station: create 3 different custom formulas</li>
+      <li>📋 Aromatherapy for tension headaches and muscle relaxation</li>
+      <li>💡 "Calm is a skill" — daily rituals to rewire your stress response</li>
+      <li>🎁 Assemble your personal Calm Kit to take home (worth RM140)</li>
+    </ul>
+  </section>
 
-.card {
-  min-width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+  <section class="testimonial-section">
+    <h2>💬 Real voices from calm creators</h2>
+    <div class="carousel" id="calmCarousel">
+      <div class="carousel-track" id="calmTrack">
+        <div class="testimonial-card">
+          <p>🌸 "I never knew blending my own rollerball could be so therapeutic. Now I use my calm blend every night and actually sleep through."</p>
+          <h4>— Zara L.</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>🌙 "The workshop didn't just teach me recipes — it gave me a whole new skill to handle panic moments. The Calm Kit sits on my nightstand!"</p>
+          <h4>— Mei Chen</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>🍃 "4 hours well spent. Small group, lots of personal attention, and the support group is still active. I finally feel in control of my stress."</p>
+          <h4>— Ramesh K.</h4>
+        </div>
+      </div>
+    </div>
+    <div class="dots" id="calmDots"></div>
+  </section>
 
-.card h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
+  <section>
+    <h2>📍 Venue & Schedule</h2>
+    <p><strong>🗓️ Date:</strong> 16 May 2026 (Saturday) <br>
+    <strong>⏰ Time:</strong> 9:00 AM – 1:00 PM <br>
+    <strong>🏡 Location:</strong> Bukit Jelutong, Shah Alam (exact address sent after registration) <br>
+    <strong>👥 Capacity:</strong> ONLY 10 seats — intimate setting <br>
+    <strong>✨ Includes:</strong> all equipment, premium essential oils, calming tea, and your personal CALM KIT (worth RM140)</p>
+  </section>
+</main>
 
-.card p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
+<!-- ✅ FIXED: "REGISTER NOW" button links to register.html in the same directory -->
+<div style="text-align: center; margin: 0 auto 60px auto;" class="container">
+  <a href="register.html" class="btn" style="font-size: 1.2rem; padding: 16px 40px;">🎟️ REGISTER NOW →</a>
+  <p style="margin-top: 16px; color: #6f7e87;">Only 10 seats · First come, first served</p>
+</div>
 
-.card span {
-  font-size: 13px;
-  color: #666;
-}
-
-/* dots */
-.dots {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.dot {
-  height: 8px;
-  width: 8px;
-  margin: 0 4px;
-  background-color: #ccc;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background 0.3s;
-}
-
-.dot.active {
-  background-color: #333;
-}
-</style>
+<footer>
+  <p>🌿 DIY Calm Workshop — Calm is a skill, not a luxury. ❤️</p>
+  <p>📍 Bukit Jelutong, Shah Alam | 16 May 2026 | 9am–1pm | Max 10 seats</p>
+  <p>📧 purchasingpoweruser@gmail.com | 📞 +6013-308-3049</p>
+</footer>
 
 <script>
-const track = document.getElementById("track");
-const cards = document.querySelectorAll(".card");
-const dotsContainer = document.getElementById("dots");
+  const track = document.getElementById('calmTrack');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const dotsContainer = document.getElementById('calmDots');
+  let currentIdx = 0;
+  let totalCards = cards.length;
 
-let index = 0;
-let total = cards.length;
+  if (dotsContainer && totalCards > 0) {
+    for (let i = 0; i < totalCards; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
 
-/* create dots */
-for (let i = 0; i < total; i++) {
-  let dot = document.createElement("span");
-  dot.classList.add("dot");
-  if (i === 0) dot.classList.add("active");
-  dot.addEventListener("click", () => goToSlide(i));
-  dotsContainer.appendChild(dot);
-}
+  const dots = document.querySelectorAll('#calmDots .dot');
 
-const dots = document.querySelectorAll(".dot");
+  function goToSlide(index) {
+    if (!track) return;
+    currentIdx = index;
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+    if (dots.length) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIdx);
+      });
+    }
+  }
 
-/* go to slide */
-function goToSlide(i) {
-  index = i;
-  track.style.transform = `translateX(-${i * 100}%)`;
-  updateDots();
-}
-
-/* update dots */
-function updateDots() {
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
-}
-
-/* auto slide */
-setInterval(() => {
-  index = (index + 1) % total;
-  goToSlide(index);
-}, 8000); // 4秒自动滑
+  if (totalCards > 1) {
+    setInterval(() => {
+      currentIdx = (currentIdx + 1) % totalCards;
+      goToSlide(currentIdx);
+    }, 6500);
+  }
 </script>
-    <section>
-      <h2>How to Register</h2>
-      <ol>
-        <li>Fill in the registration form.</li>
-        <li>Pay via Touch ‘n Go / bank transfer</li>
-        <li>Receive confirmation + pre-class briefing with venue map & checklist.</li>
-      </ol>
-      <p><em>Replacement allowed, but no refunds within 3 days of workshop date.</em></p>
-    </section>
-  </main>
-  <img src="social.jpg" style="width:100%; border-radius:12px;">
-  <div class="cta">
-    <h2>Ready to take control of your home plumbing?</h2>
-    <a href="https://ronald-tech888.github.io/diy-plumbing-workshop/register.html" target="_blank" rel="noopener">Join the 9 May Class</a>
-    <p>(Only 12 seats · Confirmation upon payment)</p>
-  </div>
 </body>
 </html>
