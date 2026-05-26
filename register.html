@@ -160,19 +160,17 @@
     <p style="margin-top: 12px; font-size: 0.9rem;">✅ After submitting this form, send payment slip to WhatsApp +6013-308-3049 or email purchasingpoweruser@gmail.com</p>
   </div>
 
-  <!-- ✅ FORM updated to use Formspree endpoint -->
+  <!-- ✅ UPDATED FORM: Endpoint changed to Formspree -->
   <form action="https://formspree.io/f/xeedrvjk" method="POST">
-    <!-- Formspree configuration -->
-    <input type="hidden" name="_subject" value="NEW: DIY Calm Workshop Registration">
     
-    <!-- IMPORTANT: This tells Formspree to redirect to thanks.html -->
+    <!-- Formspree redirect to thanks.html -->
     <input type="hidden" name="_next" value="https://ronald-tech888.github.io/diy-calm/thanks.html">
     
-    <!-- Send CC to these emails (Formspree uses _cc) -->
-    <input type="hidden" name="_cc" value="midasmines@gmail.com,desmondsia.everlifestyle@gmail.com">
+    <!-- Formspree email subject -->
+    <input type="hidden" name="_subject" value="NEW: DIY Calm Workshop Registration">
     
-    <!-- Auto reply to user (Formspree uses _autoresponse) -->
-    <input type="hidden" name="_autoresponse" value="Thank you for registering for DIY Calm Workshop! We've received your registration. Please complete payment within 12 hours to secure your seat. Payment details: Touch 'n Go +6013-308-3049 or HLB 04100099089 (Ong Soon Chong). Send payment slip to WhatsApp +6013-308-3049.">
+    <!-- Optional: Formspree reply-to (so you can reply directly to the user) -->
+    <input type="hidden" name="_replyto" value="email">
 
     <label for="fullname">Full Name *</label>
     <input type="text" id="fullname" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
@@ -213,7 +211,7 @@
       <label><input type="checkbox" name="Payment Policy Acknowledged" value="Yes" required> I understand seats are confirmed only after payment slip is sent. Replacements allowed; no refunds within 3 days of the workshop.</label>
     </div>
 
-    <!-- Submit button - when clicked, form POSTs to Formspree, then redirects to thanks.html -->
+    <!-- ✅ Submit button now posts to Formspree, then redirects to thanks.html -->
     <button type="submit" class="btn">💚 Submit Registration → Proceed to Payment</button>
   </form>
 
