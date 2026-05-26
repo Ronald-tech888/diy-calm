@@ -133,6 +133,17 @@
       background: #f0e2d4;
     }
 
+    .error-message {
+      background: #fee2e2;
+      border: 1px solid #fecaca;
+      border-radius: 16px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      color: #991b1b;
+      font-size: 0.9rem;
+      display: none;
+    }
+
     @media (max-width: 640px) {
       main {
         padding: 28px 24px;
@@ -160,19 +171,26 @@
     <p style="margin-top: 12px; font-size: 0.9rem;">✅ After submitting this form, send payment slip to WhatsApp +6013-308-3049 or email purchasingpoweruser@gmail.com</p>
   </div>
 
-  <!-- ✅ Formspree Form Endpoint -->
-  <form action="https://formspree.io/f/xvzywvyy" method="POST">
+  <div id="form-error" class="error-message"></div>
+
+  <!-- ✅ Formspree Form Endpoint - Fixed email validation -->
+  <form id="registration-form" action="https://formspree.io/f/xvzywvyy" method="POST">
     <!-- Formspree Configuration -->
     <input type="hidden" name="_subject" value="NEW: DIY Calm Workshop Registration">
     <input type="hidden" name="_cc" value="midasmines@gmail.com,desmondsia.everlifestyle@gmail.com">
+    <!-- Use _replyto with a valid email field reference -->
     <input type="hidden" name="_replyto" value="email">
     <input type="hidden" name="_next" value="https://ronald-tech888.github.io/diy-calm/thanks.html">
+    
+    <!-- Formspree anti-spam (optional but recommended) -->
+    <input type="hidden" name="_captcha" value="true">
 
     <label for="fullname">Full Name *</label>
     <input type="text" id="fullname" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
 
     <label for="email">Email Address *</label>
     <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    <div class="info-note">We'll send confirmation to this email</div>
 
     <label for="whatsapp">WhatsApp / Mobile Number *</label>
     <input type="text" id="whatsapp" name="WhatsApp Number" placeholder="e.g., +6013-308-3049" required>
@@ -180,7 +198,7 @@
 
     <label>Ticket Selection *</label>
     <div class="radio-group">
-      <label><input type="radio" name="Ticket Type" value="Early Bird – RM280" required> Early Bird (first 5 seats) – RM280</label>
+      <label><input type="radio" name="Ticket Type" value="Early Bird – RM280" required> Early Bird (first seats) – RM280</label>
       <label><input type="radio" name="Ticket Type" value="Standard – RM350"> Standard – RM350</label>
       <label><input type="radio" name="Ticket Type" value="Buddy Pass – RM520"> Buddy Pass (2 pax) – RM520</label>
     </div>
@@ -218,6 +236,32 @@
   <p style="text-align: center; font-size: 0.9rem;">Having issues with the form? Email details to purchasingpoweruser@gmail.com</p>
   <p style="text-align: center;"><a href="index.html" class="back-link">← Back to Workshop Details</a></p>
 </main>
+
+<script>
+  // Optional: Add client-side validation to catch issues before submission
+  const form = document.getElementById('registration-form');
+  const errorDiv = document.getElementById('form-error');
+  
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value.trim();
+      
+      // Basic email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        e.preventDefault();
+        errorDiv.style.display = 'block';
+        errorDiv.textContent = '❌ Please enter a valid email address (e.g., name@example.com)';
+        emailInput.focus();
+        return;
+      }
+      
+      // Clear any previous error
+      errorDiv.style.display = 'none';
+    });
+  }
+</script>
 
 </body>
 </html>
