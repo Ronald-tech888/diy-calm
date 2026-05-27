@@ -133,17 +133,6 @@
       background: #f0e2d4;
     }
 
-    .error-message {
-      background: #ffe5e5;
-      border: 1px solid #ffb3b3;
-      border-radius: 16px;
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      color: #c0392b;
-      font-size: 0.9rem;
-      display: none;
-    }
-
     @media (max-width: 640px) {
       main {
         padding: 28px 24px;
@@ -214,6 +203,10 @@
       <label><input type="radio" name="Slip Delivery Method" value="WhatsApp" required> WhatsApp (+6013-308-3049)</label>
       <label><input type="radio" name="Slip Delivery Method" value="Email"> Email (purchasingpoweruser@gmail.com)</label>
     </div>
+
+    <!-- NEW: Refer By field -->
+    <label for="referby">Refer By (How did you hear about us?)</label>
+    <input type="text" id="referby" name="Refer By" placeholder="e.g., Friend, Instagram, Facebook, Google, WhatsApp, etc.">
 
     <label for="notes">Special notes / stress concerns or questions (optional)</label>
     <textarea id="notes" name="Additional Notes" rows="3" placeholder="Let us know if you have specific sleep issues, tension areas, or questions about aromatherapy."></textarea>
