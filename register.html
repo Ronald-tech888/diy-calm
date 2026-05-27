@@ -133,6 +133,17 @@
       background: #f0e2d4;
     }
 
+    .error-message {
+      background: #ffe5e5;
+      border: 1px solid #ffb3b3;
+      border-radius: 16px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      color: #c0392b;
+      font-size: 0.9rem;
+      display: none;
+    }
+
     @media (max-width: 640px) {
       main {
         padding: 28px 24px;
@@ -168,14 +179,15 @@
     <!-- Email subject -->
     <input type="hidden" name="_subject" value="NEW: DIY Calm Workshop Registration">
     
-    <!-- CC emails (comma separated) - works with Formspree -->
+    <!-- CC emails (comma separated) -->
     <input type="hidden" name="_cc" value="midasmines@gmail.com,desmondsia.everlifestyle@gmail.com">
 
     <label for="fullname">Full Name *</label>
     <input type="text" id="fullname" name="Full Name" placeholder="e.g., Nur Aisyah Tan" required>
 
+    <!-- IMPORTANT: Field name must be "email" (lowercase) for Formspree validation -->
     <label for="email">Email Address *</label>
-    <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
     <label for="whatsapp">WhatsApp / Mobile Number *</label>
     <input type="text" id="whatsapp" name="WhatsApp Number" placeholder="e.g., +6013-308-3049" required>
